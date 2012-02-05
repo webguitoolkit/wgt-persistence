@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+
+<log4j:configuration>
+
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<param name="Target" value="System.out"></param>
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p %c{1}:%L - %m%n"></param>
+		</layout>
+	</appender>
+
+	<logger name="org.hibernate.SQL" additivity="false">
+		<level value="debug"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+
+	<logger name="org.hibernate.type" additivity="false">
+		<level value="info"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+	<logger name="org.hibernate.jdbc" additivity="false">
+		<level value="warn"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+
+	<logger name="org.hibernate.tool.hbm2ddl" additivity="false">
+		<level value="info"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+<!--
+	<logger name="org.hibernate.hql" additivity="false">
+		<level value="debug"></level>
+	</logger>
+
+	<logger name="org.hibernate.cache" additivity="false">
+		<level value="debug"></level>
+	</logger>
+
+	<logger name="com.endress.infoserve.wam.bo.jco" additivity="false">
+		<level value="debug"></level>
+	</logger>
+-->
+	<logger name="com.endress.infoserve" additivity="false">
+		<level value="debug"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+	
+	<logger name="org.apache" additivity="false">
+		<level value="warn"></level>
+		<appender-ref ref="stdout"/>
+	</logger>
+	
+	<root>
+		<priority value="warn" />
+		<appender-ref ref="stdout"/>
+	</root>
+
+</log4j:configuration>

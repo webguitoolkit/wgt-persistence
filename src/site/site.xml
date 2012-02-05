@@ -1,0 +1,31 @@
+<project name="W@M lite Device Viewer">
+    <skin>
+        <groupId>com.endress.infoserve.commons.maven</groupId>
+        <artifactId>btd-siteskin</artifactId>
+        <version>01.00.03</version>
+    </skin>
+    <version position="left"/>
+    <publishDate position="navigation-bottom" format="MM-dd-yyyy"/>
+
+    <bannerLeft>
+        <name>PersistenceFramework2</name>
+        <src>images/eh-banner.jpg</src>
+    </bannerLeft>
+    <bannerRight>
+        <name>Endress+Hauser InfoServe</name>
+        <src>images/EH_InfoServe_2c_klein.jpg</src>
+        <href>http://www.infoserve.endress.com/</href>
+    </bannerRight>      
+    <body>
+        <menu name="Overview">
+          <item name="Project home" href="index.html"/>
+        </menu>
+<!-- 
+        <menu name="Google">
+            <item name="Google" href="http://google.com/"/>
+        </menu>
+ -->        
+        <menu ref="modules"  />
+        <menu ref="reports" />
+    </body>
+</project>

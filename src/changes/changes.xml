@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<document>
+   <properties>
+      <title>Endress + Hauser PersistenceFramework2</title>
+      <author email="peter.zaretzke@infoserve.endress.com">Peter Zaretzke</author>
+   </properties>
+<!-- 
+The following attributes are supported for the <release> element:
+
+version			Required	Name of the version in which the changes occur. For each change, add a nested <action> element as described below.
+date			Required	Date at which the version was released. You can use a free form comment such as "in SVN" for unreleased versions.
+description		Optional	An optional description of the release. This is used in the overview table of releases. Note: In releases prior to 2.0-beta-2 this was called desc. It was changed to improve compatibility with the Maven 1 changes plugin.
+
+The following attributes are supported for the <action> element:
+
+dev				Required	Name of developer who committed the change. This must be the name of the developer as described in the developers section of the pom.xml file.
+type			Required	Type of change. There are four valid values: add, fix, remove, update.
+issue			Optional	Id of the issue related to this change. This is the id in your issue tracking system.
+							The Changes plugin will generate a URL out of this id. The URL is constructed using the value of the issueLinkTemplate parameter. See the changes-report mojo for more details.
+due-to			Optional	Name of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
+due-to-email	Optional	Email of the person to be credited for this change.
+ -->
+   <body>
+      <release version="01.01.00" date="2010-11-22" description="Big refactoring">
+          <action dev="hermannm" type="update" date="2011-02-09">
+            Jumped to version 01.01.00 because so many packages have changed
+          </action>
+          <action dev="hermannm" type="update" date="2011-02-09">
+            Added JPA support and tests
+          </action>
+          <action dev="hermannm" type="update" date="2011-02-09">
+            Refactored package structure
+          </action>
+          <action dev="hermannm" type="update" date="2011-02-09">
+            Removed some internal methods from IPersistable interface and made them protected in Persistable class
+          </action>
+          <action dev="hermannm" type="update" date="2011-02-09">
+            Refactored tests and test objects
+          </action>
+      </release>
+      <release version="01.00.00" date="2010-11-22" description="Maintenance release">
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          Use different delimiter for specifying the Hibernate dialect in JNDI.
+          </action>
+          <action dev="kaiserw" type="add" date="2010-11-22">
+          Test cases for one-to-many tests with stale/deleted objects.
+          </action>
+          <action dev="kaiserw" type="add" date="2010-11-22">
+          Updated support Hibernate Envers (enabling revisions for audited entities).
+          </action>
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          Updated Hibernate to version 3.6.0.
+          </action>
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          Minor refactorings in BaseHibernateQuery to prevent duplicate code and provide possibility for retrieving objects directly from the database (without caching/with refresh).
+          </action>
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          BaseCountQuery returns a result of type long instead of type int for better compatibility with newer Hibernate implementations.
+          </action>
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          Added type parameter to class BaseHibernateQuery.
+          </action>
+          <action dev="kaiserw" type="update" date="2010-10-26">
+          Make AllOfAKindQuery more flexible to be able to use separate template classes for result type (interface) and query type (implementing class).
+          </action>
+          <action dev="kaiserw" type="update" date="2010-11-22">
+          Updated Über-POM from version 02.00.12 to 02.01.00. This parent POM separates the build process from the dependency definitions and provides profiles for reporting.
+          </action>
+      </release>
+   </body>
+</document>

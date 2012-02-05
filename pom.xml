@@ -1,0 +1,214 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<parent>
+		<groupId>org.webguitoolkit.maven</groupId>
+		<artifactId>wgt-project-template</artifactId>
+		<version>01.00.00</version>
+	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.webguitoolkit.persistence</groupId>
+	<artifactId>wgt-persistence-api</artifactId>
+	<name>PersistenceFramework3</name>
+	<version>01.01.01-SNAPSHOT</version>
+	<description>New persistence framework using annotations.</description>
+
+	<developers>
+		<developer>
+			<id>kaiserw</id>
+			<name>Wolfram Kaiser</name>
+			<email>wolfram.kaiser@infoserve.endress.com</email>
+		</developer>
+		<developer>
+			<id>zaretzkep</id>
+			<name>Peter Zaretzke</name>
+			<email>peter@17sprints.de</email>
+		</developer>
+		<developer>
+			<id>hermannm</id>
+			<name>Martin Hermann</name>
+			<email>martin.hermann@infoserve.endress.com</email>
+		</developer>
+	</developers>
+
+	<issueManagement>
+		<system>github</system>
+		<url>https://github.com/webguitoolkit/wgt-persistence/issues</url>
+	</issueManagement>
+
+	<scm>
+		<connection>scm:git:git@github.com:webguitoolkit/wgt-persistence.git</connection>
+		<developerConnection>scm:git:git@github.com:webguitoolkit/wgt-persistence.git</developerConnection>
+		<url>git@github.com:webguitoolkit/wgt-persistence.git</url>
+	</scm>
+
+	<properties>
+		<prop.project.root.dir>${basedir}</prop.project.root.dir>
+		<prop.project.group>Commons</prop.project.group>
+		<prop.project.name>${project.name}</prop.project.name>
+		<prop.site.generateReports>true</prop.site.generateReports>
+		<prop.javadoc.attach-javadocs>true</prop.javadoc.attach-javadocs>
+		<prop.source.generateSourceJar>true</prop.source.generateSourceJar>
+		<prop.jar.skipTestjar>false</prop.jar.skipTestjar>
+		<prop.test.skip>false</prop.test.skip>
+		<prop.java.sourceversion>1.5</prop.java.sourceversion>
+		<prop.java.targetversion>1.5</prop.java.targetversion>
+		<prop.aspectj.excludes />
+		<prop.hibernate.version>3.6.2.Final</prop.hibernate.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.webguitoolkit.maven</groupId>
+				<artifactId>wgt-project-template-dependencies</artifactId>
+				<version>01.00.00</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+			<version>${prop.hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-c3p0</artifactId>
+			<version>${prop.hibernate.version}</version>
+			<optional>true</optional>
+		</dependency>
+
+		<!-- // suppresses PropertyValueException for non-nullable relations - 
+			but is the current test cases // we expect them and would we get a low-level 
+			SQLException instead. <dependency> <groupId>org.hibernate</groupId> <artifactId>hibernate-validator</artifactId> 
+			<version>4.0.2.GA</version> <optional>true</optional> </dependency> -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-envers</artifactId>
+			<version>${prop.hibernate.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.6.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>commons-digester</groupId>
+			<artifactId>commons-digester</artifactId>
+			<optional>true</optional>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-dbcp</groupId>
+			<artifactId>commons-dbcp</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-pool</groupId>
+			<artifactId>commons-pool</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+		</dependency>
+		
+		<!-- dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+		</dependency-->
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.aspectj</groupId>
+			<artifactId>aspectjrt</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>concurrent</groupId>
+			<artifactId>concurrent</artifactId>
+			<version>1.3.4</version>
+		</dependency>
+
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+			<version>1.0.b2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.jdom</groupId>
+			<artifactId>jdom</artifactId>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+				<configuration>
+					<tagBase>http://isw600.infoserve.endress.com/svn/${prop.project.group}/PersistenceFramework/tags</tagBase>
+					<autoVersionSubmodules>${release.autoVersionSubmodules}</autoVersionSubmodules>
+					<preparationGoals>clean test-compile aspectj:compile
+						aspectj:test-compile verify</preparationGoals>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>test-jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>aspectj-maven-plugin</artifactId>
+				<dependencies>
+					<dependency>
+						<groupId>org.aspectj</groupId>
+						<artifactId>aspectjtools</artifactId>
+						<version>1.6.9</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>

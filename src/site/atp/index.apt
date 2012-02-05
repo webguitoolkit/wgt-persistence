@@ -1,0 +1,12 @@
+ -----
+Index
+ -----
+ Martin Hermann
+ -----
+ March 2009
+ 
+Persistence Framework 2
+  
+  The Persistence Framework 2 handles the storing updating and deletion of persistent objects. It is optimized
+  for Hibernate but has open Interface structure that allows you to use other data storage mechanism such as 
+  direct JDBC, serialisation of the objects or writing XML Files.
