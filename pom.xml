@@ -9,7 +9,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.webguitoolkit.persistence</groupId>
 	<artifactId>wgt-persistence-api</artifactId>
-	<name>PersistenceFramework3</name>
+	<name>wgt-persistence</name>
 	<version>01.01.01-SNAPSHOT</version>
 	<description>New persistence framework using annotations.</description>
 
@@ -51,8 +51,8 @@
 		<prop.source.generateSourceJar>true</prop.source.generateSourceJar>
 		<prop.jar.skipTestjar>false</prop.jar.skipTestjar>
 		<prop.test.skip>false</prop.test.skip>
-		<prop.java.sourceversion>1.5</prop.java.sourceversion>
-		<prop.java.targetversion>1.5</prop.java.targetversion>
+		<prop.java.sourceversion>1.6</prop.java.sourceversion>
+		<prop.java.targetversion>1.6</prop.java.targetversion>
 		<prop.aspectj.excludes />
 		<prop.hibernate.version>3.6.2.Final</prop.hibernate.version>
 	</properties>
